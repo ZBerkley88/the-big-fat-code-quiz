@@ -1,0 +1,14 @@
+ul li {
+    display: inline-flex;
+}
+
+.high-score {
+    position: relative;
+    float: left;
+}
+
+.timer {
+    position: relative;
+    float: right;
+    padding-right: 200px;
+}
