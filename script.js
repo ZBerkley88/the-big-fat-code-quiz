@@ -1,4 +1,6 @@
 // add querySelector buttons to start the quiz
+var startBtn = document.querySelector(".start-button");
+
 // add querySelector buttons for the quiz answers
 // make a function that allows the slideshow to move to the next question
     // can entire questions be stored in an array? can they be stored as objects?
