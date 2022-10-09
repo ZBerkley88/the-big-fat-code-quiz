@@ -17,18 +17,18 @@ var feedbackEl = document.getElementById('feedback');
 
 
 function startQuiz() {
-// hide start screen
+    // hide start screen
     document.getElementById('start-screen').style.display = 'none';
 
-// un-hide questions section
+    // un-hide questions section
     document.getElementById('questions').style.display = 'block';
-// show starting time (high)
+    // show starting time (high)
     document.getElementById('time').innerHTML = time;
 
-// start timer 
+    // start timer 
     var count = time;
     var countdown = setInterval(function() {
-        if (count >= 0) {
+        if (count > 0) {
             count--;
             document.getElementById('time').innerHTML = count;
         } else {
@@ -36,15 +36,13 @@ function startQuiz() {
         }
         
     }, 1000);   
-}
 
     getQuestion();
-// }
+}
 
 
-
-
-function getQuestion() { //this function is going to get the data from the questions array
+//this function retrieves data from the questions array
+function getQuestion() { 
     // get current question object from array
     var currentQuestion = questions[currentQuestionIndex]
 
@@ -53,20 +51,26 @@ function getQuestion() { //this function is going to get the data from the quest
     titleEl.textContent = currentQuestion.title;
 
     // clear out any old question choices
-    choicesEl.innerHTML = ''; //Study this later
+    choicesEl.innerHTML = ''; 
 
-    // create a for loop that creates the choice elements
+    // for loop that creats a button for each choice
     for (var i = 0; i < currentQuestion.choices.length; i++) {
-        // create new button for each choice
-        //.createElement
-        //.setAttribute (set a class="choice")
-        //.textContent
-        //.appendChild
+        // creates an element named 'button'
+        var buttonEl = document.createElement('button');
+        // creates a variable to reference the question box element
+        var questionsEl = document.getElementById('questions')
+        // sets the attribute of the button to class='choice'
+        buttonEl.setAttribute('class', 'choice');
+        // inserts a string into a text node, in this case, the answer choices from the questions array
+        buttonEl.textContent = currentQuestion.choices[i];
+        // appends the button and its text content to the #questions div container
+        questionsEl.appendChild(buttonEl);
     }
 }
 
 function questionClick(event) {
     var buttonEl = event.target;
+    console.log('clicked on answer')
 
     // if the clicked element is not a choice button, do nothing.
     if (!buttonEl.matches('.choice')) {
