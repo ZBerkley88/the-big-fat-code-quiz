@@ -8,15 +8,24 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--dark-green);
 }
 
-
-ul li {
-    display: inline-flex;
+#start {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    color: var(--white);
+    width: 150px;
+    height: 50px;
+    margin: 400px auto 50px auto;
+    border-style: solid;
+    border-radius: 8px;
 }
 
-#question-box {
+.wrapper {
+    text-align: center;
     background-color: var(--blue);
     margin-top: 100px;
     margin-left: auto;
@@ -29,21 +38,8 @@ ul li {
     border-width: 2px;
 }
 
-.start-button {
-    font-size: 1.5rem;
+.scores {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--grey);
-    color: var(--white);
-    width: 150px;
-    height: 50px;
-    margin: 500px auto 50px auto;
-    border-style: solid;
-    border-radius: 8px;
-}
-
-.high-score {
     position: relative;
 }
 
@@ -51,4 +47,8 @@ ul li {
     position: relative;
     float: right;
     padding-right: 50px;
+}
+
+.hide {
+    display: none;
 }

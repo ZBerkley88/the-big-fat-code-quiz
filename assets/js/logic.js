@@ -1,4 +1,3 @@
-// variables to keep track of quiz state
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
@@ -13,21 +12,37 @@ var initialsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
 // sound effects
-var sfxRight = new Audio('assets/sfx/correct.wav');
-var sfxWrong = new Audio('assets/sfx/incorrect.wav');
+// var sfxRight = new Audio('assets/sfx/correct.wav');
+// var sfxWrong = new Audio('assets/sfx/incorrect.wav');
 
 
 function startQuiz() {
-    // hide start screen
+// hide start screen
+    document.getElementById('start-screen').style.display = 'none';
 
-    // un-hide questions section
+// un-hide questions section
+    document.getElementById('questions').style.display = 'block';
+// show starting time (high)
+    document.getElementById('time').innerHTML = time;
 
-    //start timer (high)
-
-    //show starting time (high)
+// start timer 
+    var count = time;
+    var countdown = setInterval(function() {
+        if (count >= 0) {
+            count--;
+            document.getElementById('time').innerHTML = count;
+        } else {
+            clearInterval(countdown);
+        }
+        
+    }, 1000);   
+}
 
     getQuestion();
-}
+// }
+
+
+
 
 function getQuestion() { //this function is going to get the data from the questions array
     // get current question object from array
