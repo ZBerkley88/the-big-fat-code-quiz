@@ -22,10 +22,16 @@
     margin: 400px auto 50px auto;
     border-style: solid;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 #question-title {
     margin-bottom: 80px;
+}
+
+ol {
+    font-size: 1.5rem;
+    line-height: 3rem;
 }
 
 .wrapper {
@@ -40,16 +46,17 @@
     border-style: solid;
     border-radius: 8px;
     border-width: 2px;
+    box-shadow: 8px 8px var(--grey);
 }
 
 .choice {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     justify-content: left;
     align-items: center;
     background-color: var(--grey);
     color: var(--white);
-    width: 150px;
+    width: 250px;
     height: 50px;
     margin: 20px auto auto 50px;
     border-style: solid;
@@ -62,7 +69,17 @@
     position: relative;
 }
 
+.feedback {
+    color: var(--dark-green);
+    font-size: 2.3rem;
+    font-style: italic;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
 .timer {
+    font-size: 1.5rem;
     position: relative;
     float: right;
     padding-right: 50px;
@@ -70,4 +87,8 @@
 
 .hide {
     display: none;
+}
+
+#start:hover, .choice:hover {
+    background-color: var(--brown);
 }
