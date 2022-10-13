@@ -132,17 +132,7 @@ function quizEnd() {
     questionsEl.setAttribute('class', 'hide');
 }
 
-function clockTick() {
-    // update time
-    time--;
-    timerEl.textContent = time;
-
-    // check if user ran out of time
-    if (time <= 0) {
-        quizEnd();
-    }
-}
-
+    // removed a pointless function on 10.13.2022
 
 function saveHighscore() {
     // get value of input box
